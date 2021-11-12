@@ -5,7 +5,7 @@ $this->device_types['dimmerpca'] = array(
     'PARENT_CLASS'=>'SControllers',
     'CLASS'=>'SMegaPCA9685Dimmers',
     'PROPERTIES'=>array(
-        'level'=>array('DESCRIPTION'=>'Значение слайдера (в диапазоне от 0 – 100). Свойство является служебным','ONCHANGE'=>'levelUpdated','DATA_KEY'=>1),
+        'level'=>array('DESCRIPTION'=>'Значение слайдера (в диапазоне от 0 – 100)','ONCHANGE'=>'levelUpdated','DATA_KEY'=>1),
         'ipAddress'=>array('DESCRIPTION'=>'IP-адрес Меги','_CONFIG_TYPE'=>'num','_CONFIG_HELP'=>'SdDimmerMinMax'),
         'Password'=>array('DESCRIPTION'=>'Пароль Меги','_CONFIG_TYPE'=>'num','_CONFIG_HELP'=>'SdDimmerMinMax'),
         'Port'=>array('DESCRIPTION'=>'Порт Меги (куда подключена цепь освещения)','_CONFIG_TYPE'=>'num','_CONFIG_HELP'=>'SdDimmerMinMax'),
@@ -27,10 +27,10 @@ $this->device_types['dimmerpca'] = array(
         'levelWorkUpdated'=>array('DESCRIPTION'=>'Level Work Updated'),
         'turnOn'=>array('DESCRIPTION'=>LANG_DEVICES_TURN_ON,'_CONFIG_SHOW'=>1),
         'turnOff'=>array('DESCRIPTION'=>LANG_DEVICES_TURN_OFF,'_CONFIG_SHOW'=>1),
-        'switch'=>array('DESCRIPTION'=>'Переключить'),
+        'switch'=>array('DESCRIPTION'=>'Переключить','_CONFIG_SHOW'=>1),
         'dimming'=>array('DESCRIPTION'=>'Яркость'),
-        'plus'=>array('DESCRIPTION'=>'Увеличить яркость'),
-        'minus'=>array('DESCRIPTION'=>'Уменьшить яркость'),
+        'plus'=>array('DESCRIPTION'=>'Увеличить яркость','_CONFIG_SHOW'=>1),
+        'minus'=>array('DESCRIPTION'=>'Уменьшить яркость','_CONFIG_SHOW'=>1),
         'On'=>array('DESCRIPTION'=>'Вкл','_CONFIG_SHOW'=>1),
         'Off'=>array('DESCRIPTION'=>'Выкл','_CONFIG_SHOW'=>1)
     )
