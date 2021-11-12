@@ -1,9 +1,13 @@
 <?php
 
+$ipAddress = $this->getProperty('ipAddress');
+$Password = $this->getProperty('Password');
+$Port = $this->getProperty('Port');
+$Ext = $this->getProperty('Ext');
+
 //Переключение диммируемого канала
 if ($this->getProperty('Dimmable') == 1) {
-$value = file_get_contents("http://".$this->getProperty('ipAddress')."/".$this->getProperty('Password')."/?pt=".$this->getProperty('Port')."&ext=".$this->getProperty('Ext')."&cmd=get");
-
+$value = file_get_contents("http://".$ipAddress."/".$Password."/?pt=".$Port."&ext".$Ext."&cmd=get");
 
 If ($value == 0 || $value == "") {
 $this->callMethod('turnOn');
@@ -19,8 +23,8 @@ return "";
 }
 
 //Стандартное переключение выхода
-file_get_contents("http://".$this->getProperty('ipAddress')."/".$this->getProperty('Password')."/?cmd=".$this->getProperty('Port')."e".$this->getProperty('Ext').":2");
-$state = file_get_contents("http://".$this->getProperty('ipAddress')."/".$this->getProperty('Password')."/?pt=".$this->getProperty('Port')."&ext=".$this->getProperty('Ext')."&cmd=get");
+file_get_contents("http://".$ipAddress."/".$Password."/?cmd=".$Port."e".$Ext.":2");
+$state = file_get_contents("http://".$ipAddress."/".$Password."/?pt=".$Port."&ext".$Ext."&cmd=get");
 
 if ($state == "ON") {
   $this->setProperty('status', 1);
